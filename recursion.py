@@ -6,8 +6,7 @@ def n_exp_m(n, m):
         return 1
     if m == 1:
         return n
-    n = n * (n_exp_m(n, m - 1))
-    return n
+    return n * (n_exp_m(n, m - 1))
 
 
 def sum_of_digits(number):
@@ -15,25 +14,22 @@ def sum_of_digits(number):
         number = -number
     if number == 0:
         return 0
-    sum = number % 10 + sum_of_digits(number // 10)
-    return sum
+    return number % 10 + sum_of_digits(number // 10)
 
 
 def len_of_list(my_list):
     if not my_list:
         return 0
-    if my_list:
-        my_list.pop(0)
-        return 1 + len_of_list(my_list)
+    my_list.pop(0)
+    return 1 + len_of_list(my_list)
 
 
 def is_palindrome(word):
-    if len(word) == 0 or len(word) == 1:
+    if len(word) <= 1:
         return True
     if word[0] != word[-1]:
         return False
-    is_palindrome(word[1: len(word) - 1])
-    return True
+    return is_palindrome(word[1: -1])
 
 
 def print_even_numb_from_list(my_list):
@@ -62,17 +58,16 @@ def second_max_in_list(my_list):
 
     def second_max(max, second, list):
         if not list:
-            return max, second, list
+            return second
 
         if list[0] >= max:
             second = max
             max = list[0]
         elif list[0] > second:
             second = list[0]
-        list = list[1:]
-        return second_max(max, second, list)
+        return second_max(max, second, list[1:])
 
-    return second_max(max_list, second_max_list, my_list[2:])[1]
+    return second_max(max_list, second_max_list, my_list[2:])
 
 
 def walk_directory(path):
@@ -81,4 +76,3 @@ def walk_directory(path):
             print(i)
         elif os.path.isdir(path + '\\' + i):
             walk_directory(path + '\\' + i)
-
