@@ -81,3 +81,4 @@ def walk_directory(path):
             print(i)
         elif os.path.isdir(path + '\\' + i):
             walk_directory(path + '\\' + i)
+
