@@ -1,3 +1,6 @@
+import os
+
+
 def n_exp_m(n, m):
     if m == 0:
         return 1
@@ -71,3 +74,10 @@ def second_max_in_list(my_list):
 
     return second_max(max_list, second_max_list, my_list[2:])[1]
 
+
+def walk_directory(path):
+    for i in os.listdir(path):
+        if os.path.isfile(path + '\\' + i):
+            print(i)
+        elif os.path.isdir(path + '\\' + i):
+            walk_directory(path + '\\' + i)
