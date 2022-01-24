@@ -76,3 +76,26 @@ def walk_directory(path):
             print(i)
         elif os.path.isdir(path + '\\' + i):
             walk_directory(path + '\\' + i)
+
+
+def printParenthesis(n):
+    par_list = [""] * 2 * n
+    if (n > 0):
+        _printParenthesis(par_list, 0, n, 0, 0)
+
+
+def _printParenthesis(par_list, pos, n, open, close):
+    if (close == n):
+        for i in par_list:
+            print(i, end="")
+        print()
+    else:
+        if (open > close):
+            par_list[pos] = ')'
+            _printParenthesis(par_list, pos + 1, n, open, close + 1)
+        if (open < n):
+            par_list[pos] = '('
+            _printParenthesis(par_list, pos + 1, n, open + 1, close)
+
+
+printParenthesis(5)
