@@ -12,8 +12,8 @@ def n_exp_m(n, m):
 def sum_of_digits(number):
     if number < 0:
         number = -number
-    if number == 0:
-        return 0
+    if number < 10:
+        return number
     return number % 10 + sum_of_digits(number // 10)
 
 
