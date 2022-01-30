@@ -11,7 +11,7 @@ def remove_nodes_recursive(root, remove_tag):
     remove_list = []
     for child in root:
         if child.tag == remove_tag:
-           remove_list.append(child)
+            remove_list.append(child)
 
     for child in remove_list:
         root.remove(child)
