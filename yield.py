@@ -1,7 +1,3 @@
-import time
-from threading import Thread
-
-
 def long_process(n):
     sum = 0
     for x in range(n):
